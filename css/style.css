@@ -1,0 +1,625 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fontFamily: "Nunito Sans", sans-serif;
+  --primaryColor: #f26000;
+  --secondaryColor: #106eea;
+  --bg-clr: #f1f6fe;
+  --clr-white: #fff;
+  --clr-black: #000;
+  --size: 1.2rem;
+  --Size2Rem: 2rem;
+  --spacing: 5rem;
+}
+
+body {
+  font-family: var(--fontFamily);
+  font-size: 14px;
+  cursor: default;
+}
+
+::selection {
+  color: var(--clr-white);
+  background-color: var(--clr-black);
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondaryColor);
+}
+
+ul {
+  list-style: none;
+}
+
+/* header styling starts from here */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background-color: var(--clr-white);
+  padding: 15px 5rem;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.navbar {
+  display: flex;
+  gap: 0 var(--Size2Rem);
+}
+
+.logo {
+  color: var(--secondaryColor);
+  font-weight: 600;
+  font-size: var(--Size2Rem);
+}
+
+.inline {
+  color: var(--primaryColor);
+}
+
+.navbar li a {
+  font-size: 17px;
+  color: blue;
+  font-weight: 600;
+}
+
+/* header styling ends here */
+
+/* main section styling starts from here */
+
+/* index styling starts from here */
+.banner-image {
+  position: relative;
+  background: url("/images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.content-box {
+  position: relative;
+  max-width: 600px;
+  backdrop-filter: blur(2px) saturate(80%);
+  background-color: rgba(17, 25, 40, 0.4);
+  border-radius: 12px;
+  padding: var(--Size2Rem);
+  color: var(--clr-white);
+  text-align: center;
+}
+
+.content-box .heading {
+  font-size: 3rem;
+}
+
+.subheading {
+  font-size: var(--size);
+  margin: var(--size) 0;
+}
+
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px 28px;
+  transition: 0.5s linear;
+  color: var(--clr-white);
+}
+
+.btn:first-child {
+  border-radius: 4px;
+  background: var(--secondaryColor);
+}
+
+.buttons .btn:last-child:hover {
+  color: var(--primaryColor);
+}
+
+.cards {
+  padding: var(--spacing);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.cards .card {
+  position: relative;
+  flex: 1 1 24%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 23px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: var(--Size2Rem) var(--size);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card .card-head i {
+  font-size: 2.2rem;
+}
+
+.card .card-title {
+  margin-top: var(--Size2Rem);
+  font-size: var(--size);
+}
+
+.card .card-text {
+  margin: 1.3rem 0;
+  letter-spacing: 1px;
+}
+
+.card .card-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  background-color: var(--secondaryColor);
+  border-radius: inherit;
+  transition: 0.2s linear;
+}
+
+.cards .card:hover {
+  color: var(--clr-white);
+}
+
+.cards .card:hover .card-overlay {
+  top: 0;
+  z-index: -1;
+}
+
+.about-section {
+  padding: var(--spacing) 0;
+  background: #f6f9fe;
+}
+
+.maxw600p {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about__heading {
+  font-size: 1.9rem;
+}
+
+.about__subheading {
+  font-size: var(--size);
+  background: var(--secondaryColor);
+  color: var(--clr-white);
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+}
+
+.about-section .cards {
+  gap: 15px;
+  padding-bottom: unset;
+}
+
+.about-section .cards .card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 32%;
+  padding: 5rem 1.2rem;
+  box-shadow: none;
+  background-color: var(--clr-white);
+  border: 2px solid #e2eefd;
+}
+
+.about-section .cards .card .card-body {
+  text-align: center;
+}
+
+.about-section .cards .card:hover {
+  color: var(--clr-black);
+}
+
+.about-section .cards .card-head .icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-clr);
+  color: var(--secondaryColor);
+  height: 70px;
+  width: 70px;
+}
+
+.achievement-section {
+  padding: var(--spacing);
+  background: var(--clr-white);
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 15px;
+}
+
+.flex-items {
+  position: relative;
+  background-color: var(--bg-clr);
+  flex: 1 0 24%;
+  padding: var(--Size2Rem) 15px;
+  margin-top: 4rem;
+}
+
+.flex-items .icon {
+  position: absolute;
+  top: -21%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--primaryColor);
+}
+
+.flex-items .icon i {
+  font-size: 1.7rem;
+  color: var(--clr-white);
+}
+
+.flex-items .body .card-title {
+  font-size: var(--Size2Rem);
+}
+
+.flex-items .body .card-text {
+  font-size: 1.2rem;
+}
+
+.contact-section {
+  padding: var(--spacing);
+  background: var(--bg-clr);
+}
+
+.contact-form {
+  padding: 3rem 1.2rem;
+  max-width: 40%;
+  margin: 0 auto;
+  background-color: var(--clr-white);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.contact-form .row {
+  margin-bottom: 0.8rem;
+}
+
+.contact-form .row:first-child {
+  display: flex;
+}
+
+.contact-form .row:first-child > div {
+  width: 50%;
+}
+
+.contact-form .row:first-child > div:first-child {
+  padding-right: 10px;
+}
+
+.contact-form .row:first-child > div:last-child {
+  padding-left: 10px;
+}
+
+input,
+textarea {
+  border-radius: 5px;
+  border: 2px solid var(--primaryColor);
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.contact-form .row:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form .btn {
+  background-color: var(--primaryColor);
+  border: none;
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* index styling ends here */
+
+/* Gallery page styling starts from here */
+.gallery .banner-image {
+  background-image: url("https://wallpaperaccess.com/full/14736.jpg");
+}
+
+.gallery .banner-image .overlay {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: unset;
+}
+
+.gallery .banner-image .content-box {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.gallery-section {
+  padding: var(--spacing);
+}
+
+.gallery-section {
+  padding: var(--spacing);
+}
+
+.gallery-section .gallery__image {
+  border-radius: 5px;
+  background-image: url("https://wallpaperaccess.com/full/14736.jpg");
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+}
+
+.gallery-section .cards {
+  padding: unset;
+}
+
+.gallery-section .cards > * {
+  flex: 1 1 32%;
+  padding: unset;
+  max-height: 300px;
+}
+
+.gallery-section .cards > * img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s linear;
+}
+
+.image-overlay {
+  position: absolute;
+  cursor: pointer;
+  top: 0%;
+  background: rgba(0, 0, 0);
+  /* background-color: red; */
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  transition: 0.2s linear;
+}
+
+.content {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  opacity: 0;
+  color: var(--clr-white);
+  transition: 0.3s linear;
+}
+
+.gallery-section .cards > *:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-section .cards > *:hover .image-overlay {
+  opacity: 0.6;
+}
+
+.gallery-section .cards > *:hover .content {
+  bottom: 42px;
+  opacity: 1;
+}
+/* Gallery page styling ends here */
+
+/* main section styling ends here */
+
+/* footer styling starts from here */
+footer {
+  background-color: #f3f3f3;
+}
+
+.footer-section .cards {
+  gap: 0;
+}
+
+.footer-section .cards:hover > * {
+  color: var(--clr-black);
+}
+
+.footer-section .cards > * {
+  box-shadow: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer_heading {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.footer_heading ~ ul li {
+  margin-bottom: 1.2rem;
+}
+
+.footer_heading ~ ul li a {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--clr-black);
+  transition: 0.2s linear;
+}
+
+.footer_heading ~ ul li a:hover {
+  padding-left: 8px;
+  color: var(--primaryColor);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.social-icons > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  border-radius: 5px;
+  background: var(--secondaryColor);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.social-icons > * > a {
+  color: var(--clr-white);
+}
+
+.copyright {
+  background: var(--bg-clr);
+  padding: 2rem var(--spacing);
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 2px;
+}
+/* footer styling ends here */
+@media (min-width: 320px) and (max-width: 576px) {
+  :root {
+    --space: 1.4rem;
+  }
+
+  header {
+    padding: 15px var(--space);
+  }
+  .banner-image {
+    padding: 20px;
+  }
+  .content-box .heading {
+    font-size: 1.5rem;
+  }
+
+  .buttons > a:first-child {
+    margin-bottom: 15px;
+  }
+
+  .cards, .copyright {
+    padding: var(--space);
+  }
+
+  .achievement-section {
+    padding: 5rem var(--space);
+  }
+
+  .cards .card,
+  .about-section .cards .card {
+    flex-basis: 100%;
+  }
+
+  .flexbox {
+    margin-top: 2rem;
+  }
+
+  .flex-items {
+    flex-basis: 33%;
+    margin-top: 2rem;
+  }
+
+  .contact-section {
+    padding: 5rem var(--space);
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .footer-section > .cards > .card:first-child,
+  .footer-section > .cards > .card:last-child {
+    text-align: center;
+  }
+
+  .footer-section > .cards > .card:first-child > .footer_heading {
+    font-size: 2.7rem;
+  }
+
+  .footer-section > .cards > .card:nth-child(2),
+  .footer-section > .cards > .card:nth-child(3) {
+    flex-basis: 50%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .copyright {
+    display: block;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .navigation-bar {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 320px;
+    background-color: #f3f3f3;
+    height: 100%;
+    padding: 15px;
+    z-index: 12;
+    transform: translate(-100%);
+    transition: 0.2s linear;
+  }
+  .navigation-bar.active {
+    transform: translate(0);
+  }
+  .navbar {
+    display: block;
+  }
+  .navbar li {
+    margin-bottom: 20px;
+  }
+  .hamburger {
+    display: block;
+  }
+}
